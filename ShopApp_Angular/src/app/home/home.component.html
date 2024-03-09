@@ -1,0 +1,227 @@
+<style>
+    .intro-section{
+        text-align: center;
+        color: white;
+        padding: 20px;
+    }
+    .search-box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .product-category{
+        width: 200px;
+        color: rgba(255, 255, 255, 0.5);
+        background-color: rgb(19, 23, 42);
+
+    }
+    .search-input{
+        width: 300px;
+        background-color: rgb(19, 23, 42);
+        margin-right: 10px;
+        border-color: rgba(255, 255, 255, 0.5);
+        color: white;
+    }
+    .form-control{
+        background-color: transparent;
+        color: white;
+    }
+    .form-control::placeholder { /* Chorme, Firefox, Opera, Safari 10.1+ */
+        color: rgba(255, 255, 255, 0.5);
+        opacity: 1;
+    }
+    .form-control:-ms-input-placeholder{ /* Internet Explorer 10-11 */
+        color: rgba(255, 255, 255, 0.5);
+    }
+    .form-control::-ms-input-placeholder{ /* Microsoft Edge */
+        color: rgba(255, 255, 255, 0.5);
+    }
+    .product-item {
+        background-color: rgb(19, 23, 42);
+        border: 1px solid rgb(35, 39, 61);
+        border-radius: 20px;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    .product-image{
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    .product-name{
+        color: white;
+    }
+    .product-description{
+        color: rgb(173, 178, 203);
+    }
+    .product-waranty{
+        color: rgb(242, 126, 212);
+    }
+    .product-price{
+        color: white;
+    }
+    .product-rating{
+        color: #FFD700;
+        margin-top: 10px;
+    }
+    .product-actions {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .space-x {
+        margin: 0 5px;/* magin top, right, bottom, left*/
+    }
+</style>
+<div class="container">
+    <div class="intro-section">
+        <h1>Đây là trang home</h1>
+        <p>Trang này hiển thị danh sách các sản phẩm, kèm ảnh</p>
+        <p>Các bạn có thể chọn xem sản phẩm và mua hàng tại đây</p>
+    </div>
+    <!-- Đoạn này có 1 ô searchbox bên trái, 1 combobox bên phải -->
+    <div class="search-box">
+        <input type="text" class="form-control search-input" placeholder="Tìm sản phẩm">
+        <select class="form-control product-category">
+            <option selected disabled>Danh mục sản phẩm</option>
+            <option>Đồ điện tử</option>
+            <option>Sách</option>
+            <option>Đồ chơi</option>
+        </select>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-md-6">
+            <div class="product-item">
+                <img src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/431328514_2288090298056695_4684969072452636875_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeF91IIPobxz9tXLm2KGJnIjZf9hhhRGZ8Bl_2GGFEZnwBascE44ZqoXVWPpYHENb99yT5jh9GY1ZSAAktU3Qh9d&_nc_ohc=hxKMSRuPGJ0AX9tMLJg&_nc_ht=scontent.fsgn5-15.fna&oh=00_AfAgFROzGpilB5MOiVU8dDcIJRCnKSTB_6MZp7Ij_zeXeg&oe=65F01AE8" 
+                alt="Product Image" class="product-image">
+                <h3 class="product-name">Product 1</h3>
+                <p class="product-description">Iphone 11 pro max with 256gb, 125hz</p>
+                <p class="product-waranty">Bảo hành: 1 năm</p>
+                <p class="product-price">Giá: <del>100$</del> 52$</p>
+                <div class="product-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <div class="product-actions">
+                    <button class="btn btn-primary">Thêm vào giỏ hàng</button>
+                    <span class="space-x"></span>
+                    <button class="btn btn-success">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="product-item">
+                <img src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/431328514_2288090298056695_4684969072452636875_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeF91IIPobxz9tXLm2KGJnIjZf9hhhRGZ8Bl_2GGFEZnwBascE44ZqoXVWPpYHENb99yT5jh9GY1ZSAAktU3Qh9d&_nc_ohc=hxKMSRuPGJ0AX9tMLJg&_nc_ht=scontent.fsgn5-15.fna&oh=00_AfAgFROzGpilB5MOiVU8dDcIJRCnKSTB_6MZp7Ij_zeXeg&oe=65F01AE8" 
+                alt="Product Image" class="product-image">
+                <h3 class="product-name">Product 1</h3>
+                <p class="product-description">Iphone 11 pro max with 256gb, 125hz</p>
+                <p class="product-waranty">Bảo hành: 1 năm</p>
+                <p class="product-price">Giá: <del>100$</del> 52$</p>
+                <div class="product-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <div class="product-actions">
+                    <button class="btn btn-primary">Thêm vào giỏ hàng</button>
+                    <span class="space-x"></span>
+                    <button class="btn btn-success">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="product-item">
+                <img src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/431328514_2288090298056695_4684969072452636875_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeF91IIPobxz9tXLm2KGJnIjZf9hhhRGZ8Bl_2GGFEZnwBascE44ZqoXVWPpYHENb99yT5jh9GY1ZSAAktU3Qh9d&_nc_ohc=hxKMSRuPGJ0AX9tMLJg&_nc_ht=scontent.fsgn5-15.fna&oh=00_AfAgFROzGpilB5MOiVU8dDcIJRCnKSTB_6MZp7Ij_zeXeg&oe=65F01AE8" 
+                alt="Product Image" class="product-image">
+                <h3 class="product-name">Product 1</h3>
+                <p class="product-description">Iphone 11 pro max with 256gb, 125hz</p>
+                <p class="product-waranty">Bảo hành: 1 năm</p>
+                <p class="product-price">Giá: <del>100$</del> 52$</p>
+                <div class="product-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <div class="product-actions">
+                    <button class="btn btn-primary">Thêm vào giỏ hàng</button>
+                    <span class="space-x"></span>
+                    <button class="btn btn-success">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="product-item">
+                <img src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/431328514_2288090298056695_4684969072452636875_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeF91IIPobxz9tXLm2KGJnIjZf9hhhRGZ8Bl_2GGFEZnwBascE44ZqoXVWPpYHENb99yT5jh9GY1ZSAAktU3Qh9d&_nc_ohc=hxKMSRuPGJ0AX9tMLJg&_nc_ht=scontent.fsgn5-15.fna&oh=00_AfAgFROzGpilB5MOiVU8dDcIJRCnKSTB_6MZp7Ij_zeXeg&oe=65F01AE8" 
+                alt="Product Image" class="product-image">
+                <h3 class="product-name">Product 1</h3>
+                <p class="product-description">Iphone 11 pro max with 256gb, 125hz</p>
+                <p class="product-waranty">Bảo hành: 1 năm</p>
+                <p class="product-price">Giá: <del>100$</del> 52$</p>
+                <div class="product-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <div class="product-actions">
+                    <button class="btn btn-primary">Thêm vào giỏ hàng</button>
+                    <span class="space-x"></span>
+                    <button class="btn btn-success">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="product-item">
+                <img src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/431328514_2288090298056695_4684969072452636875_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeF91IIPobxz9tXLm2KGJnIjZf9hhhRGZ8Bl_2GGFEZnwBascE44ZqoXVWPpYHENb99yT5jh9GY1ZSAAktU3Qh9d&_nc_ohc=hxKMSRuPGJ0AX9tMLJg&_nc_ht=scontent.fsgn5-15.fna&oh=00_AfAgFROzGpilB5MOiVU8dDcIJRCnKSTB_6MZp7Ij_zeXeg&oe=65F01AE8" 
+                alt="Product Image" class="product-image">
+                <h3 class="product-name">Product 1</h3>
+                <p class="product-description">Iphone 11 pro max with 256gb, 125hz</p>
+                <p class="product-waranty">Bảo hành: 1 năm</p>
+                <p class="product-price">Giá: <del>100$</del> 52$</p>
+                <div class="product-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <div class="product-actions">
+                    <button class="btn btn-primary">Thêm vào giỏ hàng</button>
+                    <span class="space-x"></span>
+                    <button class="btn btn-success">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="product-item">
+                <img src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/431328514_2288090298056695_4684969072452636875_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeF91IIPobxz9tXLm2KGJnIjZf9hhhRGZ8Bl_2GGFEZnwBascE44ZqoXVWPpYHENb99yT5jh9GY1ZSAAktU3Qh9d&_nc_ohc=hxKMSRuPGJ0AX9tMLJg&_nc_ht=scontent.fsgn5-15.fna&oh=00_AfAgFROzGpilB5MOiVU8dDcIJRCnKSTB_6MZp7Ij_zeXeg&oe=65F01AE8" 
+                alt="Product Image" class="product-image">
+                <h3 class="product-name">Product 1</h3>
+                <p class="product-description">Iphone 11 pro max with 256gb, 125hz</p>
+                <p class="product-waranty">Bảo hành: 1 năm</p>
+                <p class="product-price">Giá: <del>100$</del> 52$</p>
+                <div class="product-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <div class="product-actions">
+                    <button class="btn btn-primary">Thêm vào giỏ hàng</button>
+                    <span class="space-x"></span>
+                    <button class="btn btn-success">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
