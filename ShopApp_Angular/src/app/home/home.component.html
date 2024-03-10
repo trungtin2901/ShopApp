@@ -24,7 +24,7 @@
         color: white;
     }
     .form-control{
-        background-color: transparent;
+        /* background-color: transparent; */
         color: white;
     }
     .form-control::placeholder { /* Chorme, Firefox, Opera, Safari 10.1+ */
@@ -74,6 +74,7 @@
         margin: 0 5px;/* magin top, right, bottom, left*/
     }
 </style>
+<app-header></app-header>
 <div class="container">
     <div class="intro-section">
         <h1>Đây là trang home</h1>
@@ -85,9 +86,9 @@
         <input type="text" class="form-control search-input" placeholder="Tìm sản phẩm">
         <select class="form-control product-category">
             <option selected disabled>Danh mục sản phẩm</option>
-            <option>Đồ điện tử</option>
-            <option>Sách</option>
-            <option>Đồ chơi</option>
+            <option>Đồ điện tử</option>    
+            <option>Hải sản</option>    
+            <option>Bánh kẹo</option>    
         </select>
     </div>
     <div class="row">
@@ -225,3 +226,4 @@
         </div>
     </div>
 </div>
+<app-footer></app-footer>
