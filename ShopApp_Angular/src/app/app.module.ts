@@ -5,6 +5,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { OrderComponent } from './order/order.component';
 import { DetailProductComponent } from './detail-product/detail-product.component';
+import { OrderConfirmComponent } from './order-confirm/order-confirm.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { DetailProductComponent } from './detail-product/detail-product.componen
               HeaderComponent,
               FooterComponent,
               DetailProductComponent,
-              OrderComponent
+              OrderComponent,
+              OrderConfirmComponent
 
   ],
   imports: [
@@ -24,7 +26,11 @@ import { DetailProductComponent } from './detail-product/detail-product.componen
   providers: [],
   bootstrap: [
     //HomeComponent
-    DetailProductComponent
+    //DetailProductComponent,
+    //OrderComponent,
+    OrderConfirmComponent
+
+
   ]
 })
 export class AppModule { }
