@@ -31,10 +31,10 @@ import { RegisterComponent } from './register/register.component';
   bootstrap: [
     //HomeComponent
     //DetailProductComponent,
-    //OrderComponent,
+    OrderComponent,
     // OrderConfirmComponent,
     // LoginComponent,
-    RegisterComponent,
+    // RegisterComponent,
 
 
   ]
