@@ -32,10 +32,11 @@ public class User extends BaseEntity {
     @Column(name = "password", length = 200, nullable = false)
     private String password;
 
+    @Column(name = "is_active")
     private boolean active;
 
     @Column(name = "date_of_birth")
-    private String dateOfBirth;
+    private Date dateOfBirth;
 
     @Column(name = "facebook_account_id")
     private int facebookAccountId;

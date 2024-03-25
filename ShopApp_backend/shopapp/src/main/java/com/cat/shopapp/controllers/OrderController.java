@@ -1,7 +1,10 @@
 package com.cat.shopapp.controllers;
 
 import com.cat.shopapp.dtos.OrderDTO;
+import com.cat.shopapp.responses.OrderResponse;
+import com.cat.shopapp.services.OrderService;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -13,7 +16,9 @@ import java.util.List;
 //import java.util.stream.Collectors;
 @RestController
 @RequestMapping("${api.prefix}/orders")
+@RequiredArgsConstructor
 public class OrderController {
+    private final OrderService orderService;
     @PostMapping("")
     public ResponseEntity<?> createOrder(
             @RequestBody @Valid OrderDTO orderDTO,
@@ -27,7 +32,8 @@ public class OrderController {
                         .toList();
                 return ResponseEntity.badRequest().body(errorMessage);
             }
-            return ResponseEntity.ok("create order successfully");
+            OrderResponse orderResponse = orderService.createOrder(orderDTO);
+            return ResponseEntity.ok(orderResponse);
         }
         catch (Exception e){
             return ResponseEntity.badRequest().body(e.getMessage());
