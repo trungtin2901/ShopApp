@@ -35,7 +35,7 @@ public class User extends BaseEntity {
     private boolean active;
 
     @Column(name = "date_of_birth")
-    private Date dateOfBirth;
+    private String dateOfBirth;
 
     @Column(name = "facebook_account_id")
     private int facebookAccountId;
