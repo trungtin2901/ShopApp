@@ -12,7 +12,6 @@ public interface IOrderService {
 
     Order getOrderById(Long id);
 
-
     Order updateOrder(long orderId, OrderDTO orderDTO) throws DataNotFoundException;
     void deleteOrdery(long id);
 }
