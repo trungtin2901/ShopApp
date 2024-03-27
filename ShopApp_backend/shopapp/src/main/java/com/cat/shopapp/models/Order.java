@@ -58,7 +58,7 @@ public class Order {
     private String trackingNumber;
 
     @Column(name = "payment_method")
-    private Date paymentMethod;
+    private String paymentMethod;
 
     @Column(name = "active")
     private Boolean active; //Thuộc về admin

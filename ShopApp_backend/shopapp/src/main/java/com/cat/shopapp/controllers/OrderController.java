@@ -1,14 +1,13 @@
 package com.cat.shopapp.controllers;
 
 import com.cat.shopapp.dtos.OrderDTO;
-import com.cat.shopapp.responses.OrderResponse;
+import com.cat.shopapp.models.Order;
 import com.cat.shopapp.services.OrderService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -32,18 +31,28 @@ public class OrderController {
                         .toList();
                 return ResponseEntity.badRequest().body(errorMessage);
             }
-            OrderResponse orderResponse = orderService.createOrder(orderDTO);
-            return ResponseEntity.ok(orderResponse);
+            Order order = orderService.createOrder(orderDTO);
+            return ResponseEntity.ok(order);
         }
         catch (Exception e){
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
-    @GetMapping("/{user_id}")
+    @GetMapping("/user/{user_id}")
     public ResponseEntity<?> getOrders(@Valid @PathVariable("user_id") Long userId){
         try {
-
-            return ResponseEntity.ok("Danh sách order từ user_id");
+            List<Order> orders = orderService.getAllOrder(userId);
+            return ResponseEntity.ok(orders);
+        }
+        catch (Exception e){
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getOrder(@Valid @PathVariable("id") Long orderId){
+        try {
+            Order existingOrder = orderService.getOrderById(orderId);
+            return ResponseEntity.ok(existingOrder);//"Lấy chi tiết của 1 đơn hàng nào đó từ order id"
         }
         catch (Exception e){
             return ResponseEntity.badRequest().body(e.getMessage());
@@ -55,11 +64,18 @@ public class OrderController {
             @Valid @PathVariable("id") Long id,
             @Valid @RequestBody OrderDTO orderDTO
     ){
-        return ResponseEntity.ok("Cập nhật thông tin order");
+        try {
+            Order order = orderService.updateOrder(id, orderDTO);
+            return ResponseEntity.ok(order);
+        }
+        catch (Exception e){
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteOrder(@Valid @PathVariable("id") Long id){
         //xóa mềm -> Cập nhật trường active =false
-        return ResponseEntity.ok("Xóa thông tin order");
+        orderService.deleteOrdery(id);
+        return ResponseEntity.ok("Delete successfully");
     }
 }
