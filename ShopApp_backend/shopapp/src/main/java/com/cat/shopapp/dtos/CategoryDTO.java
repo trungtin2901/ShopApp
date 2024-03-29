@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 
-@Data //chú thích này sẽ cung cấp các hàm getter, setter để thay đổi dữ liệu trường name và đọc dữ liệu trươờng name ra
+@Data
 @Getter
 @Setter
 @AllArgsConstructor
