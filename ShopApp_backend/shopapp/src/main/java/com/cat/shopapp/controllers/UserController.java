@@ -2,6 +2,7 @@ package com.cat.shopapp.controllers;
 
 import com.cat.shopapp.dtos.UserDTO;
 import com.cat.shopapp.dtos.UserLoginDTO;
+import com.cat.shopapp.models.User;
 import com.cat.shopapp.services.IUserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +21,7 @@ import java.util.List;
 @RequestMapping("api/v1/users")
 @RequiredArgsConstructor
 public class UserController {
-    //private final IUserService userService;
+    private final IUserService userService;
     @PostMapping("/register")
     public ResponseEntity<?> createUser(
             @Valid @RequestBody UserDTO userDTO,
@@ -37,18 +38,23 @@ public class UserController {
             if(!userDTO.getPassword().equals(userDTO.getRetypePassword())){
                 return ResponseEntity.badRequest().body("Password does not match");
             }
-            //userService.createUser(userDTO);
-            return ResponseEntity.ok("Register Successfully");
+            User user = userService.createUser(userDTO);
+            //return ResponseEntity.ok("Register Successfully");
+            return ResponseEntity.ok(user);
         }
         catch (Exception e){
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+            return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
     @PostMapping("/login")
     public ResponseEntity<?> login(@Valid @RequestBody UserLoginDTO userLoginDTO){
         //Kiểm tra thông tin đăng nhập và sinh token
-        //String token = userService.login(userLoginDTO.getPhoneNumber(), userLoginDTO.getPassword());
+        try {
+            String token = userService.login(userLoginDTO.getPhoneNumber(), userLoginDTO.getPassword());
+            return ResponseEntity.ok(token);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
         //Trả về token trong response
-        return ResponseEntity.ok("token");
     }
 }

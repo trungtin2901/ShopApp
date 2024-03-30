@@ -30,6 +30,7 @@ public class SecurityConfig {
     //Mã hóa mật khẩu
     @Bean
     public PasswordEncoder passwordEncoder(){
+
         return new BCryptPasswordEncoder();
     }
     @Bean
