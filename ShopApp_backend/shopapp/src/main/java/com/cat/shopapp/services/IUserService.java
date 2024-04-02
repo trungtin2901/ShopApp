@@ -5,7 +5,7 @@ import com.cat.shopapp.exceptions.DataNotFoundException;
 import com.cat.shopapp.models.User;
 
 public interface IUserService {
-    User createUser(UserDTO userDTO) throws DataNotFoundException;
+    User createUser(UserDTO userDTO) throws Exception;
 
     String login(String phoneNumber, String password) throws Exception;
 }
